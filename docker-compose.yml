@@ -22,7 +22,7 @@ services:
       - dokploy-network
 
   redis:
-    image: redis:alpine
+    image: fholzer/nginx-brotli:latest
     restart: unless-stopped
     networks:
       - dokploy-network
