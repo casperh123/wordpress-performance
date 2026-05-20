@@ -59,6 +59,12 @@ EOF
 RUN cat > /entrypoint.sh << 'EOF'
 #!/bin/bash
 set -e
+
+if [ ! -f /var/www/html/wp-login.php ]; then
+    cp -r /usr/src/wordpress/. /var/www/html/
+    chown -R www-data:www-data /var/www/html
+fi
+
 php-fpm -D
 exec nginx -g "daemon off;"
 EOF
