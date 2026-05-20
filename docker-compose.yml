@@ -1,0 +1,41 @@
+services:
+  wordpress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - wordpress_data:/var/www/html
+    networks:
+      - dokploy-network
+
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - wordpress_data:/var/www/html:ro
+      - /etc/nginx/wordpress-perf.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - wordpress
+    networks:
+      - dokploy-network
+
+  redis:
+    image: redis:alpine
+    restart: unless-stopped
+    networks:
+      - dokploy-network
+
+  memcached:
+    image: memcached:alpine
+    restart: unless-stopped
+    networks:
+      - dokploy-network
+
+volumes:
+  wordpress_data:
+
+networks:
+  dokploy-network:
+    external: true
