@@ -11,25 +11,13 @@ services:
       - dokploy-network
 
   nginx:
-    image: nginx:alpine
+    image: fholzer/nginx-brotli:latest
     restart: unless-stopped
     volumes:
       - wordpress_data:/var/www/html:ro
       - /etc/nginx/wordpress-perf.conf:/etc/nginx/nginx.conf:ro
     depends_on:
       - wordpress
-    networks:
-      - dokploy-network
-
-  redis:
-    image: fholzer/nginx-brotli:latest
-    restart: unless-stopped
-    networks:
-      - dokploy-network
-
-  memcached:
-    image: memcached:alpine
-    restart: unless-stopped
     networks:
       - dokploy-network
 
