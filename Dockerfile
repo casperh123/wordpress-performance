@@ -37,9 +37,12 @@ http {
         }
 
         location ~ \.php$ {
+            try_files $uri =404;
+            fastcgi_split_path_info ^(.+\.php)(/.+)$;
             fastcgi_pass  127.0.0.1:9000;
             fastcgi_index index.php;
             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            fastcgi_param PATH_INFO $fastcgi_path_info;
             include       fastcgi_params;
         }
 
@@ -62,8 +65,13 @@ set -e
 
 if [ ! -f /var/www/html/wp-login.php ]; then
     cp -r /usr/src/wordpress/. /var/www/html/
-    chown -R www-data:www-data /var/www/html
 fi
+
+chown -R www-data:www-data /var/www/html
+chmod -R 755 /var/www/html
+
+mkdir -p /run/nginx
+chown -R www-data:www-data /run/nginx
 
 php-fpm -D
 exec nginx -g "daemon off;"
