@@ -15,7 +15,8 @@ services:
     restart: unless-stopped
     volumes:
       - wordpress_data:/var/www/html:ro
-      - /etc/nginx/wordpress-perf.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+
     depends_on:
       - wordpress
     networks:
