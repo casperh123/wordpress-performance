@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
     libssl-dev \
     pkg-config \
-    && pecl install apcu redis memcached \
-    && docker-php-ext-enable apcu redis memcached \
+    && pecl install igbinary apcu redis memcached \
+    && docker-php-ext-enable igbinary apcu redis memcached \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*

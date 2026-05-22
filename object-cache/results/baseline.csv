@@ -1,0 +1,10 @@
+cache,req/s,median_ttfb,p90,p95
+none,23.01,1970,2100,2170
+none,22.94,1990,2100,2160
+none,22.85,1990,2080,2120
+sqlite,27.23,1630,1770,1830
+sqlite,
+sqlite,
+sqlite+apcu,28.06,1590,1730,1780
+sqlite+apcu,
+sqlite+apcu,
