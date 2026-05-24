@@ -1,2 +1,0 @@
-run_name,script,vu,run,req_per_s,p90_ms,p95_ms,p99_ms,ttfb_p95_ms,error_rate
-product-caching,load-test.js,5,1,24.186622157674663,204.5255675,209.99303700000002,0,203.97770500000001,0
