@@ -9,3 +9,5 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-enable igbinary apcu redis memcached \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+RUN echo "redis.serializer = 3" > /usr/local/etc/php/conf.d/redis-igbinary.ini
