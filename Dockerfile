@@ -1,1 +1,1 @@
-FROM wordpress:php8.4-fpm
+FROM wordpress:php8.5-fpm
