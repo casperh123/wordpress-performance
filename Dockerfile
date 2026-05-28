@@ -1,1 +1,1 @@
-FROM wordpress:php7.4-fpm
+FROM wordpress:php7.4-fp
