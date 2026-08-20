@@ -1,0 +1,164 @@
+{
+    "metrics": {
+        "data_received": {
+            "rate": 547501.1027547412,
+            "count": 43842507
+        },
+        "error_rate": {
+            "passes": 0,
+            "fails": 3299,
+            "thresholds": {
+                "rate<0.01": false
+            },
+            "value": 0
+        },
+        "total_requests": {
+            "count": 3299,
+            "rate": 41.19760163322529
+        },
+        "iterations": {
+            "count": 3299,
+            "rate": 41.19760163322529
+        },
+        "checks": {
+            "passes": 9897,
+            "fails": 0,
+            "value": 1
+        },
+        "http_req_receiving": {
+            "avg": 4.45980562928159,
+            "min": 0.546681,
+            "med": 4.37591,
+            "max": 35.876789,
+            "p(90)": 5.651942,
+            "p(95)": 6.341640999999999
+        },
+        "ttfb_ms": {
+            "min": 111.620419,
+            "med": 575.0838,
+            "max": 1164.327504,
+            "p(90)": 601.7672116,
+            "p(95)": 636.6115180999999,
+            "avg": 527.4380000251597
+        },
+        "vus": {
+            "value": 1,
+            "min": 1,
+            "max": 25
+        },
+        "http_req_tls_handshaking": {
+            "avg": 0.3308993722340104,
+            "min": 0,
+            "med": 0,
+            "max": 57.534149,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "vus_max": {
+            "value": 25,
+            "min": 25,
+            "max": 25
+        },
+        "http_req_waiting": {
+            "max": 1164.327504,
+            "p(90)": 601.7672116,
+            "p(95)": 636.6115180999999,
+            "avg": 527.4380000251597,
+            "min": 111.620419,
+            "med": 575.0838
+        },
+        "http_req_connecting": {
+            "med": 0,
+            "max": 44.148824,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0.14275085450136404,
+            "min": 0
+        },
+        "http_req_duration{expected_response:true}": {
+            "avg": 531.9488808587469,
+            "min": 115.96001,
+            "med": 579.692599,
+            "max": 1167.755207,
+            "p(90)": 605.9163046,
+            "p(95)": 641.6033922
+        },
+        "http_req_sending": {
+            "avg": 0.05107520430433469,
+            "min": 0.012434,
+            "med": 0.043903,
+            "max": 0.604049,
+            "p(90)": 0.10103820000000015,
+            "p(95)": 0.11763809999999998
+        },
+        "iteration_duration": {
+            "avg": 533.2215354331619,
+            "min": 116.796487,
+            "med": 580.470937,
+            "max": 1168.609968,
+            "p(90)": 606.8380686,
+            "p(95)": 642.8438411
+        },
+        "http_reqs": {
+            "count": 3299,
+            "rate": 41.19760163322529
+        },
+        "http_req_blocked": {
+            "avg": 0.4772637396180718,
+            "min": 0.00015,
+            "med": 0.000682,
+            "max": 101.990473,
+            "p(90)": 0.001293,
+            "p(95)": 0.001533
+        },
+        "http_req_failed": {
+            "fails": 3299,
+            "passes": 0,
+            "value": 0
+        },
+        "http_req_duration": {
+            "min": 115.96001,
+            "med": 579.692599,
+            "max": 1167.755207,
+            "p(90)": 605.9163046,
+            "p(95)": 641.6033922,
+            "avg": 531.9488808587469,
+            "thresholds": {
+                "p(95)<3000": false
+            }
+        },
+        "data_sent": {
+            "count": 335637,
+            "rate": 4191.403279591039
+        }
+    },
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {
+                "status 200": {
+                    "name": "status 200",
+                    "path": "::status 200",
+                    "id": "fad9fa412b86fcb03bee97c80dcd61f1",
+                    "passes": 3299,
+                    "fails": 0
+                },
+                "body not empty": {
+                    "path": "::body not empty",
+                    "id": "85076432bd9ecbfcd3fc3c4f2d4bdfe0",
+                    "passes": 3299,
+                    "fails": 0,
+                    "name": "body not empty"
+                },
+                "no PHP fatal": {
+                    "passes": 3299,
+                    "fails": 0,
+                    "name": "no PHP fatal",
+                    "path": "::no PHP fatal",
+                    "id": "2cbe457822e4680cdb27d4f07d8358dc"
+                }
+            }
+    }
+}
