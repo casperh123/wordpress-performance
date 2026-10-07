@@ -8,8 +8,6 @@ services:
     volumes:
       - wordpress_data:/var/www/html
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
-    networks:
-      - dokploy-network
 
   nginx:
     image: fholzer/nginx-brotli:latest
@@ -20,12 +18,6 @@ services:
 
     depends_on:
       - wordpress
-    networks:
-      - dokploy-network
 
 volumes:
   wordpress_data:
-
-networks:
-  dokploy-network:
-    external: true
